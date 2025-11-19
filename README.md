@@ -115,7 +115,7 @@ git fetch
 
 ---
 
-# Short Summary
+## Short Summary
 
 1. Enable SSH agent in 1Password  
 2. Add IdentityAgent config  
@@ -125,3 +125,24 @@ git fetch
 6. Git/gh now use 1Password-managed keys
 
 
+---
+
+# Clam AV
+
+## Install & configure everything
+make install
+
+## Check status
+make status
+
+## Trigger a manual periodic scan
+make scan-now
+
+## View logs
+make logs
+
+## Edit which paths get scanned daily
+make edit-config
+
+## Completely remove it again
+make uninstall

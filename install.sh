@@ -18,9 +18,10 @@ install_tool aws-sso aws-sso
 
 echo "Set up terminal applications"
 
-install_tool tmux tmux
+install_tool tmux
 
 echo "Set up scripts"
 
 mkdir -p "${HOME}/.local/bin"
 ln -sf "${SCRIPT_DIR}/bin/tmux_open.sh" "${HOME}/.local/bin/tmux_open.sh"
+ln -sf "${SCRIPT_DIR}/bin/screenshot.sh" "${HOME}/.local/bin/screenshot.sh"
