@@ -1,6 +1,6 @@
 SHELL := /usr/bin/env bash
 
-.PHONY: install uninstall status scan-now edit-config logs reload-systemd apply-audio-fix uninstall-audio-fix help
+.PHONY: install-audio-fix install-clamav configure-clamav unconfigure-clamav uninstall-clamav uninstall-audio-fix status-clamav scan-now edit-config logs reload-systemd apply-audio-fix uninstall-audio-fix help
 
 help:
 	@echo "Targets:"
@@ -10,20 +10,31 @@ help:
 	@echo "  make dark-mode             - set up darkmode for GTK"
 	@echo "  make help                  - Show help"
 
-install:
-	@echo "==> Installing and configuring ClamAV (requires sudo)..."
+install-clamav:
+	@echo "==> Installing ClamAV package (requires sudo)..."
 	sudo bash bin/install-clamav.sh
+
+configure-clamav:
+	@echo "==> Configuring ClamAV (requires sudo)..."
+	sudo bash bin/configure-clamav.sh
+
+install-audio-fix:
 	@echo "==> Installing and configuring audio fix (requires sudo)..."
 	sudo bash bin/apply-audio-fix.sh
 
-uninstall:
-	@echo "==> Uninstalling ClamAV setup (requires sudo)..."
+unconfigure-clamav:
+	@echo "==> Unconfiguring ClamAV (removes services/config, keeps package) (requires sudo)..."
+	sudo bash bin/unconfigure-clamav.sh
+
+uninstall-clamav:
+	@echo "==> Uninstalling ClamAV package (requires sudo)..."
 	sudo bash bin/uninstall-clamav.sh
+
+uninstall-audio-fix:
 	@echo "==> Uninstalling audio fix (requires sudo)..."
 	sudo bash bin/uninstall-audio-fix.sh
 
-
-status:
+status-clamav:
 	@echo "==> ClamAV-related service status:"
 	@echo
 	@systemctl status clamav-daemon.service --no-pager || true

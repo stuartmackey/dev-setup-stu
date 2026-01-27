@@ -23,5 +23,11 @@ install_tool tmux
 echo "Set up scripts"
 
 mkdir -p "${HOME}/.local/bin"
-ln -sf "${SCRIPT_DIR}/bin/tmux_open.sh" "${HOME}/.local/bin/tmux_open.sh"
 ln -sf "${SCRIPT_DIR}/bin/screenshot.sh" "${HOME}/.local/bin/screenshot.sh"
+ln -sf "${SCRIPT_DIR}/bin/waybar-fan-control.sh" "${HOME}/.local/bin/waybar-fan-control.sh"
+ln -sf "${HOME}/Working/personal/dev-setup-stu/bin/tmux_open.sh" "${HOME}/.local/bin/tmux_open.sh"
+
+mkdir -p "${HOME}/.local/aliases"
+ln -sf "${HOME}/Working/personal/dev-setup-stu/share/aliases/goreport_alias.sh" "${HOME}/.local/aliases/goreport_alias.sh"
+ln -sf "${HOME}/Working/personal/dev-setup-stu/share/aliases/tmux_alias.sh" "${HOME}/.local/aliases/tmux_alias.sh"
+ln -sf "${HOME}/Working/personal/dev-setup-stu/share/aliases/git_alias.sh" "${HOME}/.local/aliases/git_alias.sh"
